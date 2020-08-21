@@ -1,12 +1,13 @@
-<div id="seller-orders-index">
+<div id="seller-orders-form">
     <div class="msg success"></div>
     <div class="msg error error"></div>
     <form action="#" method="POST">
+        <input type="hidden" name="id" id="id" readonly>
         <label for="code">Code:</label><input type="text" name="code" id="code">
         <label for="order_id">Order number:</label><input type="text" name="order_id" id="order_id">
         <label for="seller_name"> Seller Name: </label><input type="text" name="seller_name" id="seller_name">
         <label for="status">Status:</label><input type="text" name="status" id="status">
-        <label for="cacelation_status">Cancelation Status:</label><input type="text" name="cacelation_status" id="cacelation_status">
+        <label for="seller_brand">Seller Brand:</label><input type="text" name="seller_brand" id="seller_brand">
         <div class="buttons"> 
             <button type="submit" class="save"> Salvar </button>
             <button type="reset" class="clean"> Limpar </button>

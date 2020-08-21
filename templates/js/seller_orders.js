@@ -32,9 +32,11 @@ function update(data, id) {
 
 function toJson(data) {
     let obj = {};
-    jQuery.map(data, function(n, i) {
-        obj[n.name] = n.value;
-    });
+    obj['code'] = data[1].value;
+    obj['order_id'] = data[2].value;
+    obj['seller_name'] = data[3].value;
+    obj['status'] = data[4].value;
+    obj['seller_brand'] = data[5].value;
     return obj
 }
 
@@ -46,9 +48,9 @@ function load_data(data){
             <td>${e['order_id']}</td>"
             <td>${e['seller_name']}</td>"
             <td>${e['status']}</td>
-            <td>${e['cancelation_status']}</td>"
+            <td>${e['seller_brand']}</td>"
             <td data-id="${e['id']}" >
-                <a class='btn-edit' href='seller-orders/form.html?id=${e['id']}'>Editar</a> |
+                <a class='btn-edit' href='seller_orders/form.html?id=${e['id']}'>Editar</a> |
                 <a class='btn-delete' href='#'>Deletar</a>
             </td>
         </tr>`;
@@ -82,11 +84,12 @@ function findById(id){
         ,dataType : 'json'
         ,type : 'get'
         ,success: (data)=>{
+            $("[name='id']").val(data.id);
             $("[name='code']").val(data.code);
             $("[name='order_id']").val(data.order_id);
             $("[name='seller_name']").val(data.seller_name);
             $("[name='status']").val(data.status);
-            $("[name='cancelation_status']").val(data.cancelation_status);
+            $("[name='seller_brand']").val(data.seller_brand);
         }
     });
 }
